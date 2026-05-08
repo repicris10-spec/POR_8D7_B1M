@@ -1,493 +1,1206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi cielo, Angie ⚓</title>
+<meta name="description" content="Una carta abierta para Angie Téllez, mi cielo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans)}
-.wrap{padding:1rem 0;max-width:680px}
-.progress-bar{height:6px;background:var(--color-background-secondary);border-radius:3px;margin-bottom:1.5rem;overflow:hidden}
-.progress-fill{height:100%;background:#1D9E75;border-radius:3px;transition:width 0.4s}
-.module-header{margin-bottom:1.5rem}
-.module-tag{font-size:12px;font-weight:500;color:#0F6E56;background:#E1F5EE;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:8px}
-.module-title{font-size:22px;font-weight:500;color:var(--color-text-primary);line-height:1.3;margin-bottom:6px}
-.module-sub{font-size:14px;color:var(--color-text-secondary);line-height:1.6}
-.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:1.25rem;margin-bottom:1rem}
-.card-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.5rem}
-.card-body{font-size:14px;color:var(--color-text-secondary);line-height:1.7}
-.highlight-box{background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:1rem 0}
-.highlight-box p{font-size:14px;color:#085041;line-height:1.7}
-.warn-box{background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:1rem 0}
-.warn-box p{font-size:14px;color:#633806;line-height:1.7}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1rem 0}
-.stat-card{background:var(--color-background-secondary);border-radius:8px;padding:1rem;text-align:center}
-.stat-num{font-size:28px;font-weight:500;color:var(--color-text-primary)}
-.stat-label{font-size:12px;color:var(--color-text-secondary);margin-top:4px}
-.quiz-option{display:block;width:100%;text-align:left;background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);border-radius:8px;padding:0.75rem 1rem;margin-bottom:0.5rem;font-size:14px;cursor:pointer;color:var(--color-text-primary);transition:background 0.2s}
-.quiz-option:hover{background:var(--color-background-secondary)}
-.quiz-option.correct{background:#E1F5EE;border-color:#1D9E75;color:#085041;font-weight:500}
-.quiz-option.wrong{background:#FCEBEB;border-color:#E24B4A;color:#501313}
-.quiz-option:disabled{cursor:default}
-.feedback{font-size:13px;padding:0.75rem 1rem;border-radius:8px;margin-top:0.5rem;line-height:1.6}
-.feedback.ok{background:#E1F5EE;color:#085041}
-.feedback.no{background:#FCEBEB;color:#501313}
-.nav-row{display:flex;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
-.btn{padding:0.6rem 1.25rem;border-radius:8px;border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);font-size:14px;cursor:pointer;color:var(--color-text-primary);font-weight:500}
-.btn:hover{background:var(--color-background-secondary)}
-.btn.primary{background:#1D9E75;color:#fff;border-color:#1D9E75}
-.btn.primary:hover{background:#0F6E56}
-.btn:disabled{opacity:0.4;cursor:default}
-.img-diagram{width:100%;border-radius:8px;margin:1rem 0}
-.table-wrap{overflow-x:auto;margin:1rem 0}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500;padding:8px 12px;text-align:left;border:0.5px solid var(--color-border-tertiary)}
-td{padding:8px 12px;border:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary)}
-tr:nth-child(even) td{background:var(--color-background-secondary)}
-.section-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
-.section-btn{padding:4px 12px;border-radius:20px;border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);font-size:12px;cursor:pointer;color:var(--color-text-secondary)}
-.section-btn.active{background:#1D9E75;color:#fff;border-color:#1D9E75}
-.section-btn.done{background:#E1F5EE;color:#0F6E56;border-color:#9FE1CB}
-.hidden{display:none}
-.score-big{font-size:48px;font-weight:500;color:#1D9E75;text-align:center;margin:1rem 0}
-.medal{font-size:48px;text-align:center;margin:1rem 0}
-</style>
+    :root {
+        --lila-soft: #c8a2ff;
+        --lila: #9d6dff;
+        --lila-deep: #6b3fb8;
+        --lila-shadow: #2d1659;
+        --negro: #0a0612;
+        --negro-suave: #14101e;
+        --blanco: #fdfcff;
+        --blanco-tibio: #f5f0ff;
+        --gris-luna: #8a7da5;
+    }
 
-<div class="wrap" id="app"></div>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Cormorant Garamond', serif;
+        background: var(--negro);
+        color: var(--blanco-tibio);
+        overflow-x: hidden;
+        line-height: 1.7;
+    }
+
+    /* ===== Background atmosphere ===== */
+    .stars {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(2px 2px at 20% 30%, var(--blanco), transparent),
+            radial-gradient(1px 1px at 60% 70%, var(--lila-soft), transparent),
+            radial-gradient(1px 1px at 50% 50%, var(--blanco), transparent),
+            radial-gradient(2px 2px at 80% 10%, var(--lila), transparent),
+            radial-gradient(1px 1px at 90% 60%, var(--blanco), transparent),
+            radial-gradient(1px 1px at 33% 80%, var(--lila-soft), transparent),
+            radial-gradient(2px 2px at 15% 85%, var(--blanco), transparent),
+            radial-gradient(1px 1px at 70% 40%, var(--lila), transparent);
+        background-size: 600px 600px;
+        opacity: 0.5;
+        animation: drift 120s linear infinite;
+    }
+
+    @keyframes drift {
+        from { transform: translateY(0); }
+        to { transform: translateY(-600px); }
+    }
+
+    .nebula {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(ellipse at 20% 30%, rgba(157, 109, 255, 0.15), transparent 50%),
+            radial-gradient(ellipse at 80% 70%, rgba(107, 63, 184, 0.12), transparent 50%),
+            radial-gradient(ellipse at 50% 90%, rgba(200, 162, 255, 0.08), transparent 50%);
+    }
+
+    /* ===== Audio control ===== */
+    .audio-toggle {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        z-index: 100;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(20, 16, 30, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--lila);
+        color: var(--lila-soft);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+        font-size: 1.2rem;
+    }
+    .audio-toggle:hover {
+        background: var(--lila);
+        color: var(--blanco);
+        transform: scale(1.1);
+        box-shadow: 0 0 30px var(--lila);
+    }
+
+    /* ===== Container ===== */
+    .container {
+        position: relative;
+        z-index: 1;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    section {
+        position: relative;
+        z-index: 1;
+        padding: 6rem 0;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+    }
+
+    .hero-decoration {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(157, 109, 255, 0.15), transparent 70%);
+        animation: pulse 6s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+        50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+    }
+
+    .hero-eyebrow {
+        font-family: 'Italiana', serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.4em;
+        color: var(--lila-soft);
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeUp 1.5s ease 0.5s forwards;
+    }
+
+    .hero-title {
+        font-family: 'Italiana', serif;
+        font-size: clamp(3rem, 9vw, 7rem);
+        font-weight: 400;
+        line-height: 1;
+        background: linear-gradient(180deg, var(--blanco) 30%, var(--lila-soft));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        animation: fadeUp 1.5s ease 1s forwards;
+    }
+
+    .hero-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        color: var(--lila-soft);
+        margin-bottom: 3rem;
+        opacity: 0;
+        animation: fadeUp 1.5s ease 1.5s forwards;
+    }
+
+    .hero-divider {
+        width: 1px;
+        height: 80px;
+        background: linear-gradient(180deg, transparent, var(--lila), transparent);
+        margin: 0 auto 3rem;
+        opacity: 0;
+        animation: growLine 2s ease 2s forwards;
+    }
+
+    @keyframes growLine {
+        from { height: 0; opacity: 0; }
+        to { height: 80px; opacity: 1; }
+    }
+
+    .hero-subtitle {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+        color: var(--gris-luna);
+        max-width: 600px;
+        margin-bottom: 4rem;
+        opacity: 0;
+        animation: fadeUp 1.5s ease 2.5s forwards;
+    }
+
+    .hero-scroll {
+        opacity: 0;
+        animation: fadeUp 1.5s ease 3s forwards;
+        font-family: 'Italiana', serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        color: var(--lila-soft);
+        text-transform: uppercase;
+    }
+
+    .hero-scroll::after {
+        content: '↓';
+        display: block;
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+        animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(10px); }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Section headers ===== */
+    .section-eyebrow {
+        font-family: 'Italiana', serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.4em;
+        color: var(--lila);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .section-title {
+        font-family: 'Italiana', serif;
+        font-size: clamp(2rem, 5vw, 3.8rem);
+        font-weight: 400;
+        line-height: 1.1;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(180deg, var(--blanco) 50%, var(--lila-soft));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .section-intro {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        color: var(--gris-luna);
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+    }
+
+    /* ===== Counter ===== */
+    .counter-section {
+        text-align: center;
+    }
+
+    .counter-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 3rem auto;
+    }
+
+    .counter-cell {
+        background: linear-gradient(180deg, rgba(20, 16, 30, 0.8), rgba(45, 22, 89, 0.4));
+        border: 1px solid rgba(157, 109, 255, 0.3);
+        border-radius: 4px;
+        padding: 2rem 1rem;
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
+    .counter-cell::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--lila), transparent);
+    }
+    .counter-cell:hover {
+        transform: translateY(-5px);
+        border-color: var(--lila);
+        box-shadow: 0 10px 40px rgba(157, 109, 255, 0.2);
+    }
+
+    .counter-number {
+        font-family: 'Italiana', serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--blanco);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        font-feature-settings: 'tnum' 1;
+    }
+
+    .counter-label {
+        font-family: 'Italiana', serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        color: var(--lila-soft);
+        text-transform: uppercase;
+    }
+
+    /* ===== Anchor section (the central symbol) ===== */
+    .anchor-section {
+        background: linear-gradient(180deg, transparent, rgba(45, 22, 89, 0.2), transparent);
+        position: relative;
+    }
+
+    .anchor-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+    }
+
+    .anchor-image {
+        position: relative;
+    }
+
+    .anchor-image img {
+        width: 100%;
+        border-radius: 2px;
+        filter: brightness(0.9) contrast(1.05);
+    }
+
+    .anchor-image::before {
+        content: '⚓';
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        font-size: 5rem;
+        color: var(--lila);
+        opacity: 0.4;
+        z-index: -1;
+    }
+
+    .anchor-text-block .quote-mark {
+        font-family: 'Italiana', serif;
+        font-size: 5rem;
+        color: var(--lila);
+        line-height: 0.5;
+        opacity: 0.5;
+    }
+
+    .anchor-text-block blockquote {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: var(--blanco-tibio);
+        margin: 1.5rem 0;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--lila);
+    }
+
+    .anchor-text-block .attribution {
+        font-family: 'Italiana', serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        color: var(--lila-soft);
+        text-transform: uppercase;
+    }
+
+    .anchor-text-block p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin: 1.5rem 0;
+        color: var(--blanco-tibio);
+    }
+
+    /* ===== Gallery ===== */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 4/5;
+        cursor: pointer;
+        background: var(--negro-suave);
+        border: 1px solid rgba(157, 109, 255, 0.2);
+        transition: all 0.5s ease;
+    }
+
+    .gallery-item.wide {
+        grid-column: span 2;
+        aspect-ratio: 16/8;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.3, 1);
+        filter: brightness(0.85);
+    }
+    .gallery-item.heladeria-img img { object-position: 30% 40%; }
+    .gallery-item.beso-img img { object-position: 35% 40%; }
+
+    .gallery-item:hover img {
+        transform: scale(1.08);
+        filter: brightness(1);
+    }
+
+    .gallery-item:hover {
+        border-color: var(--lila);
+        box-shadow: 0 0 30px rgba(157, 109, 255, 0.3);
+    }
+
+    .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem 1.2rem;
+        background: linear-gradient(0deg, rgba(10, 6, 18, 0.95), transparent);
+        color: var(--blanco-tibio);
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-caption {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .gallery-caption .date {
+        display: block;
+        font-style: normal;
+        font-family: 'Italiana', serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        color: var(--lila-soft);
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+    }
+
+    /* ===== Letter cards (frases) ===== */
+    .letters-section {
+        padding-top: 8rem;
+    }
+
+    .letter-card {
+        max-width: 750px;
+        margin: 3rem auto;
+        padding: 3rem 2.5rem;
+        background: linear-gradient(135deg, rgba(20, 16, 30, 0.8), rgba(45, 22, 89, 0.3));
+        border: 1px solid rgba(157, 109, 255, 0.3);
+        border-radius: 2px;
+        position: relative;
+        backdrop-filter: blur(10px);
+        transform: translateY(40px);
+        opacity: 0;
+        transition: all 1s ease;
+    }
+
+    .letter-card.visible {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .letter-card::before, .letter-card::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--lila);
+    }
+    .letter-card::before {
+        top: -1px; left: -1px;
+        border-right: none;
+        border-bottom: none;
+    }
+    .letter-card::after {
+        bottom: -1px; right: -1px;
+        border-left: none;
+        border-top: none;
+    }
+
+    .letter-meta {
+        font-family: 'Italiana', serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        color: var(--lila-soft);
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+
+    .letter-meta::before {
+        content: '✦';
+        margin-right: 0.5em;
+        color: var(--lila);
+    }
+
+    .letter-card p {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.25rem;
+        line-height: 1.7;
+        font-style: italic;
+        color: var(--blanco-tibio);
+    }
+
+    .letter-card .author {
+        margin-top: 1.5rem;
+        font-style: normal;
+        font-family: 'Italiana', serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.4em;
+        color: var(--lila);
+        text-transform: uppercase;
+        text-align: right;
+    }
+
+    .letter-card.from-her {
+        background: linear-gradient(135deg, rgba(45, 22, 89, 0.3), rgba(20, 16, 30, 0.8));
+    }
+
+    /* ===== China section ===== */
+    .china-section {
+        padding: 8rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .china-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .china-text h3 {
+        font-family: 'Italiana', serif;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--blanco);
+    }
+
+    .china-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--blanco-tibio);
+        margin-bottom: 1rem;
+    }
+
+    .china-distance {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        border: 1px solid var(--lila);
+        background: rgba(157, 109, 255, 0.05);
+    }
+
+    .china-distance .label {
+        font-family: 'Italiana', serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        color: var(--lila-soft);
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .china-distance .cities {
+        font-family: 'Italiana', serif;
+        font-size: 1.5rem;
+        color: var(--blanco);
+    }
+
+    .china-distance .cities span {
+        color: var(--lila);
+        margin: 0 0.5rem;
+    }
+
+    .china-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .china-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/4;
+        filter: brightness(0.85) contrast(1.05);
+        border: 1px solid rgba(157, 109, 255, 0.2);
+    }
+
+    .china-images img:nth-child(1) {
+        transform: translateY(-30px);
+    }
+    .china-images img:nth-child(2) {
+        transform: translateY(30px);
+    }
+
+    /* ===== Final letter ===== */
+    .final-section {
+        padding: 10rem 0 8rem;
+        text-align: center;
+        position: relative;
+    }
+
+    .final-anchor {
+        font-size: 4rem;
+        color: var(--lila);
+        margin-bottom: 2rem;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+
+    .final-letter {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: left;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .final-letter p {
+        font-size: 1.25rem;
+        line-height: 1.9;
+        margin-bottom: 1.5rem;
+        color: var(--blanco-tibio);
+    }
+
+    .final-letter p:first-of-type::first-letter {
+        font-family: 'Italiana', serif;
+        font-size: 4rem;
+        float: left;
+        line-height: 0.9;
+        margin: 0.2rem 0.8rem 0 0;
+        color: var(--lila);
+    }
+
+    .final-letter em {
+        color: var(--lila-soft);
+        font-style: italic;
+    }
+
+    .signature {
+        margin-top: 3rem;
+        text-align: right;
+        font-family: 'Italiana', serif;
+    }
+
+    .signature .name {
+        font-size: 2rem;
+        color: var(--blanco);
+        margin-bottom: 0.5rem;
+        font-style: italic;
+    }
+
+    .signature .role {
+        font-size: 0.75rem;
+        letter-spacing: 0.4em;
+        color: var(--lila);
+        text-transform: uppercase;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+        text-align: center;
+        padding: 3rem 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    footer p {
+        font-family: 'Italiana', serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.4em;
+        color: var(--gris-luna);
+        text-transform: uppercase;
+    }
+
+    /* ===== Reveal on scroll ===== */
+    .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+        section { padding: 4rem 0; }
+
+        .container { padding: 0 1.5rem; }
+
+        .counter-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .anchor-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+        .gallery-item.wide {
+            grid-column: span 2;
+            aspect-ratio: 16/10;
+        }
+
+        .china-container {
+            grid-template-columns: 1fr;
+        }
+        .china-images img:nth-child(1),
+        .china-images img:nth-child(2) {
+            transform: translateY(0);
+        }
+
+        .letter-card {
+            padding: 2rem 1.5rem;
+        }
+
+        .letter-card p {
+            font-size: 1.1rem;
+        }
+
+        .final-letter p {
+            font-size: 1.1rem;
+        }
+
+        .final-letter p:first-of-type::first-letter {
+            font-size: 3rem;
+        }
+
+        .audio-toggle {
+            top: 1rem;
+            right: 1rem;
+            width: 42px;
+            height: 42px;
+        }
+    }
+
+    /* Hidden YouTube player */
+    #player-wrap {
+        position: fixed;
+        bottom: -100px;
+        left: -100px;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- Background atmosphere -->
+<div class="nebula"></div>
+<div class="stars"></div>
+
+<!-- Audio toggle -->
+<button id="audioToggle" class="audio-toggle" aria-label="Reproducir música" title="Reproducir música">
+    ♪
+</button>
+
+<!-- HIDDEN YOUTUBE PLAYER -->
+<div id="player-wrap"><div id="player"></div></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-decoration"></div>
+    <div class="hero-eyebrow">Una carta abierta</div>
+    <h1 class="hero-title">Mi cielo</h1>
+    <div class="hero-name">Para Angie Téllez</div>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">
+        Esta página es un pequeño rincón del universo donde vive todo lo que somos.
+        Un lugar para recordarte — y recordarme — quiénes hemos sido.
+    </p>
+    <div class="hero-scroll">desliza</div>
+</section>
+
+<!-- ===== ANCHOR (THE CENTRAL SYMBOL) ===== -->
+<section class="anchor-section">
+    <div class="container">
+        <div class="section-eyebrow">El símbolo</div>
+        <h2 class="section-title">El ancla</h2>
+        <p class="section-intro">
+            Hay una palabra que nos cambió la vida en julio de 2023. La dijiste tú primero.
+        </p>
+
+        <div class="anchor-grid reveal">
+            <div class="anchor-image">
+                <img src="images/ancla_paris.jpg" alt="Collar de ancla con el cielo de fondo">
+            </div>
+            <div class="anchor-text-block">
+                <div class="quote-mark">“</div>
+                <blockquote>
+                    Lanzaste el ancla y nos has salvado, ¿estás consciente de ello?
+                </blockquote>
+                <div class="attribution">— Yo, 22 de julio de 2023</div>
+                <p>
+                    Desde entonces el ancla nos siguió. Me la puse al cuello y la llevé conmigo
+                    a China — la cargué por aeropuertos, por calles que no entendía,
+                    por días enteros donde nos separaban catorce horas.
+                </p>
+                <p>
+                    <em>Te dije que cuando estuviéramos mal sabrías qué hacer:
+                    tirar el lazo y botar el ancla. ⚓</em>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COUNTER ===== -->
+<section class="counter-section">
+    <div class="container">
+        <div class="section-eyebrow">El tiempo que nos hemos amado</div>
+        <h2 class="section-title">9 de diciembre, 2023</h2>
+        <p class="section-intro">
+            Ese fue el día que dijimos sí. Desde entonces, el reloj no se ha detenido.
+        </p>
+
+        <div class="counter-grid">
+            <div class="counter-cell">
+                <div class="counter-number" id="days">—</div>
+                <div class="counter-label">Días</div>
+            </div>
+            <div class="counter-cell">
+                <div class="counter-number" id="hours">—</div>
+                <div class="counter-label">Horas</div>
+            </div>
+            <div class="counter-cell">
+                <div class="counter-number" id="minutes">—</div>
+                <div class="counter-label">Minutos</div>
+            </div>
+            <div class="counter-cell">
+                <div class="counter-number" id="seconds">—</div>
+                <div class="counter-label">Segundos</div>
+            </div>
+        </div>
+
+        <p class="section-intro" style="margin-top: 4rem;">
+            Y en todo ese tiempo, esto es lo que hicimos:
+        </p>
+
+        <div class="counter-grid">
+            <div class="counter-cell">
+                <div class="counter-number">222.845</div>
+                <div class="counter-label">Mensajes</div>
+            </div>
+            <div class="counter-cell">
+                <div class="counter-number">3.434</div>
+                <div class="counter-label">«Te amo»</div>
+            </div>
+            <div class="counter-cell">
+                <div class="counter-number">30.946</div>
+                <div class="counter-label">«Mi cielo»</div>
+            </div>
+            <div class="counter-cell">
+                <div class="counter-number">14.561</div>
+                <div class="counter-label">Risas</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section>
+    <div class="container">
+        <div class="section-eyebrow">Pequeñas pruebas</div>
+        <h2 class="section-title">de que existimos</h2>
+        <p class="section-intro">
+            Un puñado de fotos. Cada una vale más que el peso de su archivo.
+        </p>
+
+        <div class="gallery reveal">
+            <div class="gallery-item beso-img">
+                <img src="images/beso_mejilla.jpg" alt="Beso en la mejilla" loading="lazy">
+                <div class="gallery-caption">
+                    <span class="date">un beso cualquiera</span>
+                    Tu manera de decirme «aquí estoy». Sin necesidad de palabras.
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/angie_trabajo.jpg" alt="Angie en su trabajo" loading="lazy">
+                <div class="gallery-caption">
+                    <span class="date">la mujer que admiro</span>
+                    Mi cielo, la que se levanta y sale a comerse el mundo.
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/rosas1.jpg" alt="Tú con las rosas" loading="lazy">
+                <div class="gallery-caption">
+                    <span class="date">tu sonrisa más mía</span>
+                    Las flores siempre fueron una excusa. Lo bonito eras tú recibiéndolas.
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/rosas2.jpg" alt="Las rosas que te di" loading="lazy">
+                <div class="gallery-caption">
+                    <span class="date">un día cualquiera, un mercado</span>
+                    Ese día fuimos a hacer mercado y me llevé a casa una sonrisa tuya con flores.
+                </div>
+            </div>
+            <div class="gallery-item wide heladeria-img">
+                <img src="images/heladeria.jpg" alt="Heladería" loading="lazy">
+                <div class="gallery-caption">
+                    <span class="date">después del trabajo</span>
+                    Nuestra heladería. Antes de tu casa, después de un día largo. Como motivo de paz.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HER WORDS ===== -->
+<section class="letters-section">
+    <div class="container">
+        <div class="section-eyebrow">Lo que dijiste tú</div>
+        <h2 class="section-title">Tus palabras</h2>
+        <p class="section-intro">
+            Estas frases las escribiste tú. Las guardé todas. Las traigo de vuelta para que las recuerdes.
+        </p>
+
+        <div class="letter-card from-her reveal">
+            <div class="letter-meta">Angie · 16 de julio, 2023</div>
+            <p>«Mientras tanto, yo te amo y te elijo mil vidas. Y cielo por favor no dudes enserio
+            de lo que siento por ti. Ahora agradezco que por encima de muchas cosas tú sigas aquí, tú estés aquí.»</p>
+            <div class="author">— Tú</div>
+        </div>
+
+        <div class="letter-card from-her reveal">
+            <div class="letter-meta">Angie · 30 de julio, 2023</div>
+            <p>«Siempre te he dicho TE AMO Y TE ELIJO A TI POR ENCIMA DE MIL COSAS.
+            Así lo he hecho hasta el día de hoy.»</p>
+            <div class="author">— Tú</div>
+        </div>
+
+        <div class="letter-card from-her reveal">
+            <div class="letter-meta">Angie · 22 de agosto, 2023</div>
+            <p>«Mi amor, mi vida, mi persona favorita, mi felicidad andante, mi consentido, mi BFF,
+            mi NBBF, mi DJ, mi pareja, mi mundo y todo lo que ello puede contener.»</p>
+            <div class="author">— Tú</div>
+        </div>
+
+        <div class="letter-card from-her reveal">
+            <div class="letter-meta">Angie · 31 de julio, 2023</div>
+            <p>«Eres lo más lindo de mi vida y de la vida.» 🩷</p>
+            <div class="author">— Tú</div>
+        </div>
+
+        <div class="letter-card from-her reveal">
+            <div class="letter-meta">Angie · 4 de marzo, 2024</div>
+            <p>«Gracias a ti por mil y un cosas más. Gracias por tanto y siempre serás bienvenido en casa
+            sin importar muchas cosas. Ya sabes que ese siempre será tu lugar.»</p>
+            <div class="author">— Tú</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HIS WORDS ===== -->
+<section>
+    <div class="container">
+        <div class="section-eyebrow">Lo que dije yo</div>
+        <h2 class="section-title">Mis palabras</h2>
+        <p class="section-intro">
+            Y estas son las mías. Las sigo sosteniendo, una por una.
+        </p>
+
+        <div class="letter-card reveal">
+            <div class="letter-meta">Cristian · 15 de julio, 2023</div>
+            <p>«Mi vida, tú eres lo mejor que me ha pasado en la vida.»</p>
+            <div class="author">— Yo</div>
+        </div>
+
+        <div class="letter-card reveal">
+            <div class="letter-meta">Cristian · 22 de julio, 2023</div>
+            <p>«Tú, amor de mi vida, me has dado la capacidad de creer en el amor de una locura hermosa.»</p>
+            <div class="author">— Yo</div>
+        </div>
+
+        <div class="letter-card reveal">
+            <div class="letter-meta">Cristian · 23 de agosto, 2023</div>
+            <p>«¿No me sueltes? Bebé, si yo te suelto. Ya me puse una cadena que me ancla a ti,
+            no existe la probabilidad en mi mente.»</p>
+            <div class="author">— Yo</div>
+        </div>
+
+        <div class="letter-card reveal">
+            <div class="letter-meta">Cristian · 25 de agosto, 2023</div>
+            <p>«Cuida las fotos y ese video, creo que son de los más memorables.
+            Así que por favor, cuando estemos mal, ya sabes qué hacer:
+            tira el lazo y bota el ancla.» ⚓</p>
+            <div class="author">— Yo</div>
+        </div>
+
+        <div class="letter-card reveal">
+            <div class="letter-meta">Cristian · 31 de julio, 2023</div>
+            <p>«Eso debe darte una certeza: cuando dije hasta el final, es el final.»</p>
+            <div class="author">— Yo</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CHINA / DISTANCE ===== -->
+<section class="china-section">
+    <div class="china-container">
+        <div class="china-text reveal">
+            <div class="section-eyebrow" style="text-align:left;">A 14.700 km de ti</div>
+            <h3>El viaje a China</h3>
+            <p>
+                Crucé medio mundo y tú estabas en cada esquina.
+                El ancla colgaba de mi pecho como un mapa: <em>ahí está ella, allá la espero.</em>
+            </p>
+            <p>
+                Me grababa videos hablándote, tú me grababas videos respondiéndome.
+                Catorce horas de diferencia y aun así nos las arreglábamos para coincidir.
+            </p>
+            <p style="font-style:italic; color:var(--lila-soft);">
+                Eso fue lo que el ancla siempre significó: no importa qué tan lejos, no me suelto.
+            </p>
+
+            <div class="china-distance">
+                <span class="label">Hoy seguimos lejos</span>
+                <div class="cities">Neiva <span>—</span> Bogotá</div>
+            </div>
+        </div>
+        <div class="china-images reveal">
+            <img src="images/video1_frame.jpg" alt="El ancla en mis manos en China">
+            <img src="images/video2_frame.jpg" alt="Tú con el ancla puesta">
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL LETTER ===== -->
+<section class="final-section">
+    <div class="container">
+        <div class="final-anchor">⚓</div>
+        <div class="section-eyebrow">Lo último que quiero decirte</div>
+        <h2 class="section-title">Mi cielo,</h2>
+
+        <div class="final-letter reveal">
+            <p>
+                Sé que ya no estamos. Sé que las cosas se complicaron, que los dos nos hicimos daño,
+                que las palabras se nos atravesaron donde antes había caricias.
+                No te traje hasta aquí para reclamarte nada.
+                <em>Te traje aquí porque me parecía injusto que tanta cosa hermosa quedara guardada en un teléfono.</em>
+            </p>
+
+            <p>
+                Hicimos una vida juntos en mensajes. Doscientos veintidós mil. Tres mil te amos.
+                Treinta mil veces «mi cielo». Y catorce mil risas. Eso no se inventa, cielo.
+                Eso pasó. Eso fue real.
+            </p>
+
+            <p>
+                No te estoy pidiendo que volvamos hoy. No te estoy pidiendo que me digas nada.
+                Solo quería que vieras todo lo que fuimos, todo junto, en un solo lugar —
+                porque a veces la vida nos hace olvidar de dónde venimos.
+            </p>
+
+            <p>
+                <em>Y porque cuando dije hasta el final, lo dije en serio.</em>
+                El ancla sigue puesta. Si algún día quieres tirar el lazo, yo voy a estar.
+                Y si no, también está bien. Ya el haberte tenido fue un milagro entero.
+            </p>
+
+            <p style="text-align:center; font-size:1.5rem; font-style:italic; color:var(--lila-soft); margin-top:3rem;">
+                Gracias por mil vidas, Angie.<br>
+                Gracias por todas las que vendrán.
+            </p>
+
+            <div class="signature">
+                <div class="name">Cristian</div>
+                <div class="role">Tu cielo</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Hecho con amor desde Neiva · ⚓ · {{año}}</p>
+</footer>
 
 <script>
-const modules = [
-  {
-    id:0, tag:"Introducción", title:"¿Qué es la norma API 9A?",
-    content: `
-      <div class="card">
-        <div class="card-title">Origen y propósito</div>
-        <div class="card-body">La norma <strong>API Spec 9A</strong> (Specification for Wire Rope) es publicada por el <em>American Petroleum Institute</em>. Establece los requisitos mínimos de fabricación, materiales, dimensiones, propiedades mecánicas, pruebas e inspección de cables de alambre (wire rope) usados en operaciones de perforación, producción y workover de pozos de petróleo y gas.</div>
-      </div>
-      <div class="highlight-box"><p>La norma aplica a cables de acero utilizados en: <strong>aparejos de perforación, cables de perforación (drilling line), cables de bomba de varilla, líneas de wireline y cables de servicio</strong> en la industria O&G.</p></div>
-      <div class="grid2">
-        <div class="stat-card"><div class="stat-num">9A</div><div class="stat-label">Código API</div></div>
-        <div class="stat-card"><div class="stat-num">26ª</div><div class="stat-label">Edición vigente</div></div>
-        <div class="stat-card"><div class="stat-num">1898</div><div class="stat-label">Año fundación API</div></div>
-        <div class="stat-card"><div class="stat-num">Wire Rope</div><div class="stat-label">Objeto de la norma</div></div>
-      </div>
-      <div class="warn-box"><p><strong>¿Por qué es crítica?</strong> El cable de perforación es uno de los componentes con mayor carga dinámica en un taladro. Una falla de cable puede ocasionar pérdida de la sarta, accidentes fatales y pérdidas económicas millonarias.</p></div>
-    `,
-    quiz: { q:"¿Cuál es el principal propósito de la API 9A?", opts:["Regular el diseño de torres de perforación","Establecer requisitos para cables de alambre en O&G","Definir procedimientos de mantenimiento de bombas","Controlar la calidad del cemento de pozos"], ans:1, fb:"¡Correcto! La API 9A especifica los requisitos de fabricación, materiales, dimensiones y pruebas de cables de alambre (wire rope) para la industria del petróleo y gas." }
-  },
-  {
-    id:1, tag:"Capítulo 1", title:"Alcance y definiciones clave",
-    content: `
-      <div class="card">
-        <div class="card-title">Alcance de la norma</div>
-        <div class="card-body">La API 9A cubre cables de alambre para uso en equipos de perforación y workover de pozos de petróleo y gas. Incluye requisitos para cables de múltiples usos dentro de las operaciones del taladro.</div>
-      </div>
-      <div class="card">
-        <div class="card-title">Definiciones esenciales</div>
-        <div class="card-body">
-          <div style="margin-bottom:10px"><strong style="color:var(--color-text-primary)">Wire Rope (Cable de alambre):</strong> Conjunto de alambres de acero agrupados en torones, los cuales se enrollan alrededor de un alma central.</div>
-          <div style="margin-bottom:10px"><strong style="color:var(--color-text-primary)">Torón (Strand):</strong> Conjunto de alambres individuales helicoidalmente enrollados alrededor de un núcleo.</div>
-          <div style="margin-bottom:10px"><strong style="color:var(--color-text-primary)">Alma (Core):</strong> Elemento central del cable, puede ser de fibra (FC), alma de alambre independiente (IWRC) o alma de torón de alambre (WSC).</div>
-          <div style="margin-bottom:10px"><strong style="color:var(--color-text-primary)">Lay:</strong> Dirección del enrollamiento de los torones alrededor del alma (derecha o izquierda).</div>
-          <div><strong style="color:var(--color-text-primary)">Preformado:</strong> Proceso donde los alambres y torones toman una forma helicoidal permanente durante la fabricación.</div>
-        </div>
-      </div>
-      <div class="highlight-box"><p><strong>Tipos de alma según API 9A:</strong><br>
-      • <strong>FC</strong> – Fiber Core / Alma de fibra (natural o sintética)<br>
-      • <strong>IWRC</strong> – Independent Wire Rope Core / Alma de cable de alambre independiente<br>
-      • <strong>WSC</strong> – Wire Strand Core / Alma de torón de alambre</p></div>
-    `,
-    quiz: { q:"¿Qué significa IWRC en un cable según API 9A?", opts:["International Wire Rope Code","Independent Wire Rope Core","Internal Wire Resistance Class","Integrated Wire Rope Construction"], ans:1, fb:"¡Exacto! IWRC significa Independent Wire Rope Core (Alma de cable de alambre independiente). Es el tipo de alma más resistente y usado en cables de perforación pesada." }
-  },
-  {
-    id:2, tag:"Capítulo 2", title:"Clasificación y construcción del cable",
-    content: `
-      <div class="card">
-        <div class="card-title">Designación del cable: cómo leerla</div>
-        <div class="card-body">Un cable se designa con una notación estándar: <strong>diámetro × (torones × alambres) × tipo de alma × lay</strong><br><br>Ejemplo: <strong>1-3/8" × 6×26 IWRC RRL</strong><br>• 1-3/8" = diámetro nominal<br>• 6 = número de torones<br>• 26 = número de alambres por torón<br>• IWRC = tipo de alma<br>• RRL = Regular Right Lay (paso derecho regular)</div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <tr><th>Clasificación</th><th>Torones × Alambres</th><th>Uso típico en taladro</th></tr>
-          <tr><td>6×19</td><td>6 torones, 16-26 alambres</td><td>Cable de perforación, sand line</td></tr>
-          <tr><td>6×36</td><td>6 torones, 27-49 alambres</td><td>Drilling line (alta flexibilidad)</td></tr>
-          <tr><td>6×7</td><td>6 torones, 3-9 alambres</td><td>Cables de ancla, líneas fijas</td></tr>
-          <tr><td>8×19</td><td>8 torones, 16-26 alambres</td><td>Cables de alta flexibilidad</td></tr>
-        </table>
-      </div>
-      <div class="card">
-        <div class="card-title">Tipos de lay (paso)</div>
-        <div class="card-body">
-          <strong>Por dirección:</strong><br>
-          • <strong>Right Lay (R):</strong> Los torones se enrollan de izquierda a derecha (sentido horario)<br>
-          • <strong>Left Lay (L):</strong> Los torones se enrollan de derecha a izquierda<br><br>
-          <strong>Por relación alambre-torón:</strong><br>
-          • <strong>Regular Lay:</strong> Los alambres se enrollan en sentido opuesto al torón (más rígido, resistente al aplastamiento)<br>
-          • <strong>Lang's Lay:</strong> Los alambres se enrollan en el mismo sentido del torón (mayor superficie de contacto, más flexible)
-        </div>
-      </div>
-      <div class="warn-box"><p><strong>Importante:</strong> El cable de perforación más usado en la industria es <strong>6×19 IWRC RRL</strong> (Regular Right Lay) por su equilibrio entre resistencia a la torsión, flexibilidad y durabilidad.</p></div>
-    `,
-    quiz: { q:"En la designación '6×26 IWRC RRL', ¿qué indica el '6'?", opts:["El diámetro del cable en pulgadas","El número de torones del cable","El número de alambres por torón","El tipo de paso del cable"], ans:1, fb:"¡Correcto! El primer número en la clasificación indica el número de torones. En este caso, 6 torones, cada uno con 26 alambres, con alma IWRC y paso derecho regular." }
-  },
-  {
-    id:3, tag:"Capítulo 3", title:"Materiales y propiedades mecánicas",
-    content: `
-      <div class="card">
-        <div class="card-title">Materiales de fabricación</div>
-        <div class="card-body">Los alambres de un cable API 9A se fabrican en acero de alto carbono con tratamiento especial. La norma establece los grados según su resistencia a la tracción mínima.</div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <tr><th>Grado del cable</th><th>Denominación</th><th>Resistencia relativa</th></tr>
-          <tr><td>IPS</td><td>Improved Plow Steel</td><td>Base (100%)</td></tr>
-          <tr><td>EIPS</td><td>Extra Improved Plow Steel</td><td>+7.5% sobre IPS</td></tr>
-          <tr><td>EEIPS</td><td>Extra Extra Improved Plow Steel</td><td>+7.5% sobre EIPS</td></tr>
-          <tr><td>PS</td><td>Plow Steel</td><td>Por debajo de IPS</td></tr>
-        </table>
-      </div>
-      <div class="highlight-box"><p><strong>En perforación se usa principalmente EIPS y EEIPS</strong> por su alta resistencia a la rotura. El grado EEIPS permite mayor carga nominal con el mismo diámetro de cable.</p></div>
-      <div class="card">
-        <div class="card-title">Propiedades mecánicas clave</div>
-        <div class="card-body">
-          <strong>Carga de rotura nominal (Catalog Strength):</strong> Carga mínima que garantiza el fabricante antes de la rotura del cable.<br><br>
-          <strong>Factor de seguridad mínimo:</strong> La API recomienda <strong>mínimo 3:1</strong> para cables de perforación activos, pero en la industria se trabaja con factores de 5:1 a 10:1.<br><br>
-          <strong>Módulo de elasticidad:</strong> Aproximadamente <strong>12,000,000 – 14,000,000 psi</strong> dependiendo de la construcción del cable.<br><br>
-          <strong>Elongación:</strong> Los cables preformados tienen menor elongación permanente inicial que los no preformados.
-        </div>
-      </div>
-    `,
-    quiz: { q:"¿Cuál grado de cable tiene MAYOR resistencia a la rotura según API 9A?", opts:["PS (Plow Steel)","IPS (Improved Plow Steel)","EIPS (Extra Improved Plow Steel)","EEIPS (Extra Extra Improved Plow Steel)"], ans:3, fb:"¡Muy bien! EEIPS (Extra Extra Improved Plow Steel) es el grado de mayor resistencia. Cada nivel agrega aproximadamente 7.5% más de resistencia sobre el anterior, siendo PS el de menor y EEIPS el de mayor resistencia." }
-  },
-  {
-    id:4, tag:"Capítulo 4", title:"Dimensiones y tolerancias",
-    content: `
-      <div class="card">
-        <div class="card-title">Diámetro nominal y tolerancias</div>
-        <div class="card-body">La API 9A establece que el diámetro medido del cable debe estar <strong>dentro de la tolerancia</strong> del diámetro nominal especificado. La medición debe hacerse con un calibrador de mordazas anchas sobre el punto de mayor diámetro del cable.</div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <tr><th>Diámetro nominal</th><th>Tolerancia permitida</th></tr>
-          <tr><td>Hasta 3/4" (19mm)</td><td>+5% / -1%</td></tr>
-          <tr><td>Mayor a 3/4"</td><td>+4% / -1%</td></tr>
-        </table>
-      </div>
-      <div class="warn-box"><p><strong>¡Atención!</strong> Un cable sobredimensionado puede no entrar en las roldanas y el tambor. Un cable subdimensionado puede tener resistencia menor a la nominal. La tolerancia positiva siempre es mayor que la negativa para proteger la seguridad.</p></div>
-      <div class="card">
-        <div class="card-title">Medición correcta del diámetro</div>
-        <div class="card-body">
-          <strong>Herramienta:</strong> Calibrador de quijadas anchas (no un vernier de puntas)<br><br>
-          <strong>Posición:</strong> Medir sobre el punto más alto de los torones exteriores (punto de mayor diámetro)<br><br>
-          <strong>Número de mediciones:</strong> Mínimo 3 puntos separados al menos 1 metro entre sí<br><br>
-          <strong>Resultado:</strong> Usar el promedio de las mediciones para comparar con la tolerancia nominal
-        </div>
-      </div>
-      <div class="highlight-box"><p>Para cables de drilling line comunes en taladros colombianos: <strong>1-1/8", 1-1/4", 1-3/8" y 1-1/2"</strong> de diámetro nominal son los más utilizados según la capacidad del taladro.</p></div>
-    `,
-    quiz: { q:"¿Con qué herramienta se mide correctamente el diámetro de un cable API 9A?", opts:["Calibrador de puntas (vernier estándar)","Cinta métrica flexible","Calibrador de quijadas anchas","Micrómetro de exteriores"], ans:2, fb:"¡Correcto! Se usa un calibrador de quijadas anchas (jaw caliper) para medir el diámetro real del cable sobre el punto más alto de los torones exteriores. Un calibrador de puntas daría una medición incorrecta al entrar entre los torones." }
-  },
-  {
-    id:5, tag:"Capítulo 5", title:"Lubricación del cable",
-    content: `
-      <div class="card">
-        <div class="card-title">¿Por qué es crítica la lubricación?</div>
-        <div class="card-body">La lubricación es un requisito de fábrica en la API 9A. Los cables deben ser lubricados durante su fabricación y requieren re-lubricación periódica en campo para:<br><br>
-        • Reducir la fricción interna entre alambres y torones<br>
-        • Proteger contra corrosión<br>
-        • Reducir el desgaste por fatiga<br>
-        • Sellar los espacios internos del cable</div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <tr><th>Tipo de lubricante</th><th>Característica</th><th>Aplicación</th></tr>
-          <tr><td>Penetrante</td><td>Baja viscosidad, penetra al alma</td><td>Mantenimiento preventivo</td></tr>
-          <tr><td>Adherente</td><td>Alta viscosidad, protección exterior</td><td>Ambientes corrosivos</td></tr>
-          <tr><td>Grafitado</td><td>Sólidos lubricantes (grafito)</td><td>Cables de alta carga</td></tr>
-        </table>
-      </div>
-      <div class="highlight-box"><p><strong>Método de aplicación en campo:</strong> La lubricación se aplica mientras el cable está en movimiento (izado o bajando). Se usan aplicadores automáticos (lubricators) presarizados o aplicación manual con brocha/espátula en zonas de reposo.</p></div>
-      <div class="warn-box"><p><strong>Nunca lubricar con:</strong> Aceite quemado, diésel, ni productos de baja calidad. Estos pueden dañar las fibras del alma (en cables FC) y atraer contaminantes abrasivos que aceleran el desgaste.</p></div>
-    `,
-    quiz: { q:"¿Cuál es el principal objetivo de la lubricación de un cable según API 9A?", opts:["Aumentar el diámetro nominal del cable","Reducir fricción interna, corrosión y desgaste por fatiga","Mejorar la visibilidad del cable para inspección","Facilitar el corte del cable durante el slip & cut"], ans:1, fb:"¡Perfecto! La lubricación tiene como objetivo principal reducir la fricción interna entre los alambres, proteger contra la corrosión y reducir el desgaste por fatiga. Un cable bien lubricado puede durar hasta 3 veces más que uno sin mantenimiento." }
-  },
-  {
-    id:6, tag:"Capítulo 6", title:"Inspección y criterios de retiro",
-    content: `
-      <div class="card">
-        <div class="card-title">Tipos de inspección según API 9A</div>
-        <div class="card-body">
-          <strong>Inspección visual:</strong> Diaria por el encuellador/perforador. Revisa alambres rotos visibles, kinks, aplastamientos y corrosión.<br><br>
-          <strong>Inspección dimensional:</strong> Semanal o según plan de mantenimiento. Mide diámetro real vs nominal.<br><br>
-          <strong>Inspección por magnaflux (MFL):</strong> Detecta pérdida de sección metálica (LMA) y discontinuidades (LF) en el interior del cable mediante campo magnético.
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-title">Criterios de retiro (discard criteria)</div>
-        <div class="card-body">La norma API 9A, en conjunto con API RP 9B, establece que un cable debe retirarse cuando:<br><br>
-          <strong>1. Alambres rotos:</strong><br>
-          • 6 alambres rotos en un torón en cualquier longitud de 1 paso de cable<br>
-          • 3 alambres rotos en un torón en cualquier longitud de 1 paso<br>
-          • 12 alambres rotos distribuidos en cualquier segmento de 12 diámetros de longitud<br><br>
-          <strong>2. Reducción de diámetro:</strong> Mayor al 3% del diámetro nominal<br><br>
-          <strong>3. Daño mecánico:</strong> Kink (doblez permanente), aplastamiento (birdcage), torceduras<br><br>
-          <strong>4. Corrosión severa:</strong> Picadura profunda o corrosión uniforme severa que reduce sección
-        </div>
-      </div>
-      <div class="warn-box"><p><strong>Regla práctica en campo:</strong> Ante la duda, el cable sale. El costo de un cable nuevo es insignificante frente al costo de una operación de pesca o un accidente.</p></div>
-    `,
-    quiz: { q:"¿Cuántos alambres rotos distribuidos en 12 diámetros de longitud justifican el retiro del cable?", opts:["6 alambres rotos","9 alambres rotos","12 alambres rotos","3 alambres rotos"], ans:2, fb:"¡Correcto! Si se encuentran 12 o más alambres rotos distribuidos en cualquier segmento de 12 diámetros de longitud del cable, este debe ser retirado de servicio inmediatamente según la API 9A/RP 9B." }
-  },
-  {
-    id:7, tag:"Capítulo 7", title:"Slip & Cut — Programa de cable",
-    content: `
-      <div class="card">
-        <div class="card-title">¿Qué es el Slip & Cut?</div>
-        <div class="card-body">El Slip & Cut (deslizar y cortar) es el procedimiento de gestión del cable de perforación (drilling line) que consiste en <strong>deslizar el cable hacia adelante</strong> (agregar cable nuevo desde el carrete hacia el sistema) y <strong>cortar el tramo más desgastado</strong> del extremo del tambor. Esto distribuye el desgaste uniformemente a lo largo del cable.</div>
-      </div>
-      <div class="highlight-box"><p><strong>¿Por qué se hace?</strong> Durante las operaciones de perforación, el cable se dobla repetidamente en los mismos puntos (sheaves y tambor). El Slip & Cut reemplaza esas zonas fatigadas con cable en buenas condiciones.</p></div>
-      <div class="card">
-        <div class="card-title">Toneladas-milla (Ton-Miles)</div>
-        <div class="card-body">La unidad de medida del trabajo acumulado del cable en la industria es <strong>toneladas-milla (T-M)</strong>. Se calcula integrando la carga × distancia recorrida por el bloque viajero.<br><br>
-          <strong>Fórmula básica:</strong><br>
-          <em>T-M = (Carga total × Distancia recorrida por bloque) / 2640</em><br><br>
-          Las compañías establecen intervalos de Slip & Cut según toneladas-milla acumuladas (ej: cada 1,000 T-M, cada 2,500 T-M según el cable y las condiciones).
-        </div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <tr><th>Factor</th><th>Impacto en T-M de Slip & Cut</th></tr>
-          <tr><td>Mayor profundidad de pozo</td><td>Más T-M por viaje → Slip & Cut más frecuente</td></tr>
-          <tr><td>Mayor diámetro de cable</td><td>Mayor capacidad → intervalos más largos</td></tr>
-          <tr><td>Más roldanas en el aparejo</td><td>Más dobleces → mayor fatiga</td></tr>
-          <tr><td>Condiciones corrosivas H2S</td><td>Reducir intervalo S&C</td></tr>
-        </table>
-      </div>
-    `,
-    quiz: { q:"¿Cuál es el objetivo principal del procedimiento de Slip & Cut?", opts:["Aumentar la longitud total del cable en el tambor","Distribuir el desgaste uniformemente reemplazando zonas fatigadas","Reducir el costo de mantenimiento del cable","Cambiar la dirección del lay del cable"], ans:1, fb:"¡Excelente! El Slip & Cut distribuye el desgaste a lo largo de todo el cable al mover las zonas más fatigadas fuera del sistema activo y cortar esa sección. Esto maximiza la vida útil del cable y mantiene la seguridad de la operación." }
-  },
-  {
-    id:8, tag:"Capítulo 8", title:"Marcado, documentación y trazabilidad",
-    content: `
-      <div class="card">
-        <div class="card-title">Requisitos de marcado API 9A</div>
-        <div class="card-body">Cada cable certificado bajo API 9A debe tener identificación que incluya:<br><br>
-          • <strong>Nombre o marca del fabricante</strong><br>
-          • <strong>Diámetro nominal</strong><br>
-          • <strong>Construcción</strong> (clasificación de torones y alambres)<br>
-          • <strong>Grado del alambre</strong> (EIPS, EEIPS, etc.)<br>
-          • <strong>Tipo de alma</strong> (FC, IWRC, WSC)<br>
-          • <strong>Tipo de lay</strong> (RRL, LRL, etc.)<br>
-          • <strong>Longitud del carrete</strong><br>
-          • <strong>Número de carrete o lote</strong><br>
-          • <strong>Logo o monograma API</strong> (si aplica certificación)
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-title">Documentos requeridos (Mill Certificate)</div>
-        <div class="card-body">El fabricante debe proveer un <strong>certificado de prueba de fábrica (mill test certificate / MTC)</strong> que contenga:<br><br>
-          • Resultados de prueba de tensión a rotura<br>
-          • Diámetro medido en fábrica<br>
-          • Composición química del alambre<br>
-          • Número de colada o heat number<br>
-          • Declaración de conformidad con API 9A
-        </div>
-      </div>
-      <div class="highlight-box"><p><strong>Monograma API:</strong> El monograma API en un cable certifica que el producto fue fabricado bajo un sistema de calidad auditado por API. Es un requisito en muchas operaciones offshore y contratos internacionales.</p></div>
-      <div class="warn-box"><p><strong>En campo:</strong> Nunca aceptar un cable sin su Mill Test Certificate. El MTC es la evidencia de que el cable cumple las propiedades mecánicas especificadas. Sin él, el cable no debe usarse.</p></div>
-    `,
-    quiz: { q:"¿Qué documento emite el fabricante para certificar que el cable cumple la API 9A?", opts:["Hoja de seguridad MSDS","Mill Test Certificate (MTC)","Certificado de calibración","Registro de inspección visual"], ans:1, fb:"¡Correcto! El Mill Test Certificate (MTC) es el documento de trazabilidad emitido por el fabricante que contiene los resultados de las pruebas mecánicas, composición química y declaración de conformidad con la API 9A. Es obligatorio en toda recepción de cable." }
-  },
-  {
-    id:9, tag:"Evaluación final", title:"Pon a prueba todo lo aprendido",
-    isFinal: true,
-    questions:[
-      { q:"¿Cuántos torones tiene un cable clasificado como 6×26 IWRC?", opts:["26 torones","6 torones","19 torones","8 torones"], ans:1 },
-      { q:"¿Qué tipo de alma ofrece MAYOR resistencia mecánica?", opts:["FC (Fiber Core)","WSC (Wire Strand Core)","IWRC (Independent Wire Rope Core)","Todas ofrecen la misma resistencia"], ans:2 },
-      { q:"¿Qué grado de cable tiene mayor resistencia a la rotura?", opts:["PS","IPS","EIPS","EEIPS"], ans:3 },
-      { q:"La unidad de medida del trabajo acumulado del cable de perforación es:", opts:["PSI","Toneladas-milla (T-M)","Kilonewton-metro","Libras-pie"], ans:1 },
-      { q:"¿Cuál daño mecánico obliga al retiro inmediato del cable?", opts:["Lubricación insuficiente","Un kink o doblez permanente","Suciedad superficial","Color oscuro por oxidación leve"], ans:1 },
-    ]
-  }
-];
+    // ===== Year =====
+    document.querySelector('footer p').innerHTML =
+        document.querySelector('footer p').innerHTML.replace('{{año}}', new Date().getFullYear());
 
-let currentModule = 0;
-let completedModules = [];
-let quizAnswered = [];
-let finalAnswers = [];
-let finalScore = 0;
+    // ===== Live counter from 9 December 2023 =====
+    function updateCounter() {
+        const start = new Date('2023-12-09T00:00:00');
+        const now = new Date();
+        const diff = now - start;
 
-function renderModule(idx) {
-  const m = modules[idx];
-  const app = document.getElementById('app');
-  const progress = (idx / (modules.length - 1)) * 100;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
 
-  if (m.isFinal) {
-    renderFinal();
-    return;
-  }
+        document.getElementById('days').textContent = days.toLocaleString('es');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    updateCounter();
+    setInterval(updateCounter, 1000);
 
-  const sectionBtns = modules.map((mod, i) => {
-    let cls = 'section-btn';
-    if (i === idx) cls += ' active';
-    else if (completedModules.includes(i)) cls += ' done';
-    return `<button class="${cls}" onclick="goTo(${i})">${mod.tag}</button>`;
-  }).join('');
+    // ===== Reveal on scroll =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
 
-  app.innerHTML = `
-    <h2 class="sr-only">Capacitación API 9A — ${m.title}</h2>
-    <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
-    <div class="section-nav">${sectionBtns}</div>
-    <div class="module-header">
-      <div class="module-tag">${m.tag}</div>
-      <div class="module-title">${m.title}</div>
-    </div>
-    ${m.content}
-    <div class="card" id="quiz-area">
-      <div class="card-title" style="margin-bottom:1rem">Pregunta de verificación</div>
-      <div class="card-body" style="margin-bottom:1rem;font-size:15px;color:var(--color-text-primary)">${m.quiz.q}</div>
-      ${m.quiz.opts.map((o,i) => `<button class="quiz-option" id="opt-${i}" onclick="answerQuiz(${i}, ${m.quiz.ans}, '${m.quiz.fb.replace(/'/g,"\\'")}', ${idx})">${o}</button>`).join('')}
-      <div id="quiz-feedback" class="hidden"></div>
-    </div>
-    <div class="nav-row">
-      <button class="btn" onclick="goTo(${idx - 1})" ${idx===0?'disabled':''}>← Anterior</button>
-      <button class="btn primary" id="btn-next" onclick="goTo(${idx + 1})" disabled>Siguiente →</button>
-    </div>
-  `;
+    document.querySelectorAll('.reveal, .letter-card').forEach(el => observer.observe(el));
 
-  if (quizAnswered[idx] !== undefined) {
-    restoreQuiz(idx);
-  }
-}
+    // ===== YouTube Audio (background music) =====
+    let player;
+    let isPlaying = false;
 
-function answerQuiz(selected, correct, feedback, modIdx) {
-  if (quizAnswered[modIdx] !== undefined) return;
-  quizAnswered[modIdx] = selected;
-  const opts = document.querySelectorAll('.quiz-option');
-  opts.forEach((btn, i) => {
-    btn.disabled = true;
-    if (i === correct) btn.classList.add('correct');
-    else if (i === selected && selected !== correct) btn.classList.add('wrong');
-  });
-  const fb = document.getElementById('quiz-feedback');
-  fb.className = 'feedback ' + (selected === correct ? 'ok' : 'no');
-  fb.textContent = selected === correct ? '✓ ' + feedback : '✗ No es correcto. ' + feedback;
-  fb.classList.remove('hidden');
-  if (!completedModules.includes(modIdx)) completedModules.push(modIdx);
-  document.getElementById('btn-next').disabled = false;
-}
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
 
-function restoreQuiz(modIdx) {
-  const m = modules[modIdx];
-  const selected = quizAnswered[modIdx];
-  const correct = m.quiz.ans;
-  const opts = document.querySelectorAll('.quiz-option');
-  opts.forEach((btn, i) => {
-    btn.disabled = true;
-    if (i === correct) btn.classList.add('correct');
-    else if (i === selected && selected !== correct) btn.classList.add('wrong');
-  });
-  const fb = document.getElementById('quiz-feedback');
-  fb.className = 'feedback ' + (selected === correct ? 'ok' : 'no');
-  fb.textContent = selected === correct ? '✓ ' + m.quiz.fb : '✗ No es correcto. ' + m.quiz.fb;
-  fb.classList.remove('hidden');
-  document.getElementById('btn-next').disabled = false;
-}
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '1',
+            width: '1',
+            videoId: 'I6xI72waMvc', // Mi Novia - Fernando Burbano
+            playerVars: {
+                'autoplay': 0,
+                'controls': 0,
+                'loop': 1,
+                'playlist': 'I6xI72waMvc',
+                'modestbranding': 1
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
 
-function goTo(idx) {
-  if (idx < 0 || idx >= modules.length) return;
-  currentModule = idx;
-  renderModule(idx);
-  window.scrollTo(0,0);
-}
+    function onPlayerReady(event) {
+        event.target.setVolume(50);
+    }
 
-function renderFinal() {
-  const app = document.getElementById('app');
-  const m = modules[modules.length - 1];
-  const progress = 100;
+    document.getElementById('audioToggle').addEventListener('click', function() {
+        if (!player || typeof player.playVideo !== 'function') return;
+        if (isPlaying) {
+            player.pauseVideo();
+            this.textContent = '♪';
+            this.title = 'Reproducir música';
+        } else {
+            player.playVideo();
+            this.textContent = '⏸';
+            this.title = 'Pausar música';
+        }
+        isPlaying = !isPlaying;
+    });
 
-  const sectionBtns = modules.map((mod, i) => {
-    let cls = 'section-btn';
-    if (i === modules.length - 1) cls += ' active';
-    else if (completedModules.includes(i)) cls += ' done';
-    return `<button class="${cls}" onclick="goTo(${i})">${mod.tag}</button>`;
-  }).join('');
-
-  app.innerHTML = `
-    <h2 class="sr-only">Evaluación final API 9A</h2>
-    <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
-    <div class="section-nav">${sectionBtns}</div>
-    <div class="module-header">
-      <div class="module-tag">${m.tag}</div>
-      <div class="module-title">${m.title}</div>
-      <div class="module-sub">Responde las siguientes preguntas. Al final verás tu resultado.</div>
-    </div>
-    <div id="final-questions">
-      ${m.questions.map((q,qi) => `
-        <div class="card" id="fq-${qi}">
-          <div class="card-title" style="margin-bottom:0.75rem">${qi+1}. ${q.q}</div>
-          ${q.opts.map((o,oi) => `<button class="quiz-option" id="fopt-${qi}-${oi}" onclick="answerFinal(${qi},${oi},${q.ans})">${o}</button>`).join('')}
-          <div id="ffb-${qi}" class="hidden"></div>
-        </div>
-      `).join('')}
-      <div class="nav-row">
-        <button class="btn" onclick="goTo(${modules.length - 2})">← Anterior</button>
-        <button class="btn primary" id="btn-score" onclick="showScore()" disabled>Ver mi resultado →</button>
-      </div>
-    </div>
-    <div id="final-result" class="hidden"></div>
-  `;
-  finalAnswers = new Array(m.questions.length).fill(undefined);
-  checkAllAnswered();
-}
-
-function answerFinal(qi, selected, correct) {
-  if (finalAnswers[qi] !== undefined) return;
-  finalAnswers[qi] = selected;
-  const opts = document.querySelectorAll(`#fq-${qi} .quiz-option`);
-  opts.forEach((btn, i) => {
-    btn.disabled = true;
-    if (i === correct) btn.classList.add('correct');
-    else if (i === selected && selected !== correct) btn.classList.add('wrong');
-  });
-  const fb = document.getElementById(`ffb-${qi}`);
-  fb.className = 'feedback ' + (selected === correct ? 'ok' : 'no');
-  fb.textContent = selected === correct ? '✓ ¡Correcto!' : '✗ La respuesta correcta era: ' + modules[modules.length-1].questions[qi].opts[correct];
-  fb.classList.remove('hidden');
-  checkAllAnswered();
-}
-
-function checkAllAnswered() {
-  const total = modules[modules.length-1].questions.length;
-  const answered = finalAnswers.filter(a => a !== undefined).length;
-  const btn = document.getElementById('btn-score');
-  if (btn) btn.disabled = answered < total;
-}
-
-function showScore() {
-  const qs = modules[modules.length-1].questions;
-  finalScore = finalAnswers.reduce((acc, ans, i) => acc + (ans === qs[i].ans ? 1 : 0), 0);
-  const pct = Math.round((finalScore / qs.length) * 100);
-  let medal = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '📚';
-  let msg = pct >= 80
-    ? '¡Excelente! Dominas los fundamentos de la norma API 9A. Estás listo para aplicarla en campo.'
-    : pct >= 60
-    ? 'Buen resultado. Repasa los módulos en rojo para reforzar los temas donde tuviste dudas.'
-    : 'Sigue estudiando. Repasa los módulos con más atención y vuelve a intentarlo.';
-
-  const resultDiv = document.getElementById('final-result');
-  resultDiv.innerHTML = `
-    <div class="card" style="text-align:center;padding:2rem">
-      <div style="font-size:48px;margin-bottom:0.5rem">${medal}</div>
-      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:0.25rem">Tu puntaje</div>
-      <div style="font-size:48px;font-weight:500;color:#1D9E75;margin-bottom:0.5rem">${finalScore}/${qs.length}</div>
-      <div style="font-size:28px;font-weight:500;color:var(--color-text-primary);margin-bottom:1rem">${pct}%</div>
-      <div style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;max-width:400px;margin:0 auto">${msg}</div>
-      <div class="nav-row" style="justify-content:center;margin-top:1.5rem">
-        <button class="btn" onclick="goTo(0)">Repasar desde el inicio</button>
-        <button class="btn primary" onclick="sendPrompt('Tengo dudas sobre la norma API 9A, ¿puedes explicarme más sobre los criterios de retiro y el Slip & Cut?')">Preguntar a Claude ↗</button>
-      </div>
-    </div>
-  `;
-  resultDiv.classList.remove('hidden');
-  document.getElementById('final-questions').classList.add('hidden');
-}
-
-renderModule(0);
+    // Make YouTube callback available globally
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 </script>
+
+</body>
+</html>
